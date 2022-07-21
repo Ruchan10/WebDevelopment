@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Event Organizer</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- font awesome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href='../static/CSS/home0.css' />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"><span>The Event Organizer</span></a>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#service">Service</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#ongoing">Ongoing</a>
+        <a href="#price">Price</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div id="menu-bars" class="fas fa-bars"></div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+<section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Branches</h3>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> Kathmandu </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> Pokhara </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> Jhapa </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> Chitwan </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> Biratnagar </a>
+      </div>
+
+      <div class="box">
+        <h3>Quick Links</h3>
+        <a href="#"> <i class="fas fa-arrow-right"></i> Home </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> Service </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> About </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> Gallery </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> OnGoing </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> Price </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> Reivew </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> Contact </a>
+      </div>
+
+      <div class="box">
+        <h3>Contact Info</h3>
+        <a href="#"> <i class="fas fa-phone"></i> +012-345-6789 </a>
+        <a href="#"> <i class="fas fa-phone"></i> +111-000-222 </a>
+        <a href="#">
+          <i class="fas fa-envelope"></i> theeventorganizer@gmail.com
+        </a>
+        <a href="#">
+          <i class="fas fa-envelope"></i> eventorganizermanager@gmail.com
+        </a>
+        <a href="#">
+          <i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal - 02937
+        </a>
+      </div>
+
+      <div class="box">
+        <h3>Follow Us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+        <a href="#"> <i class="fab fa-linkedin"></i> Linkedin </a>
+        <a href="#"> <i class="fab fa-reddit"></i> Reddit </a>
+      </div>
+    </div>
+
+    <div class="credit">
+      Created by <span>TheEventOrganizerTeam</span> | All Rights Reserved
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- custom js file link  -->
+  <script src="../static/JS/script.js"></script>
+</body>
+</html>
