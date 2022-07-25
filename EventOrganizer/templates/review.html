@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class=r>
+  <input class="bt" type="submit" value="Submit"></input>
+
+</section>
+
+<form class="review" id="review" action="" method="POST">
+  {% csrf_token %}  
+  <h1 for="desc" class="heading" >Client's <span>Reviews</span></h1>
+<br>
+<br>
+  <h1 class="heading" for="rating" style="font-size:large;">How was your experience?</h1>
+  <select class="btn1" id="rating" name="rate">
+    <option value="Excellent">Excellent</option>
+    <option value="Very Good">Very Good</option>
+    <option value="Good" selected>Good</option>
+    <option value="Not Bad">Not Bad</option>
+    <option value="Bad">Bad</option>
+  </select>
+    <textarea id="desc" type="text" class="textArea" name="textArea" placeholder="Leave a review" 
+    cols="30" rows="10"  ></textarea>
+
+    <input class="btn0" type="submit" value="Submit"></input>
+  </form>
+
+  
+  <style>
+    .btn1{
+    margin-left:45%;
+    margin-top: 16px;
+    margin-bottom:90px;
+    /* display: inline-block; */
+    padding:13px 48px;
+    font-size: 27px;
+    border-radius: 8px;
+    background: #555;
+    color:#fff;
+    cursor: pointer;
+    font-weight: 500;
+    }
+    .review{
+      margin:70px;
+    }
+  </style>
+{% endblock content %}

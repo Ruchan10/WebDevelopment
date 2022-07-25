@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<style>
+  .heading{
+  text-align: center;
+  padding-bottom: 32px;
+  color:#fff;
+  font-size: 64px;}
+</style>
+
   <section class="home" id="home">
         <div class="content">
           <h3>THE <span>BEST EVENT ORGANIZER</span>! IS IN THE TOWN.</h3>
@@ -180,40 +189,17 @@
         <h1 class="heading"><span>OnGoing</span> Events</h1>
         <!-- <div class="slideshow-container"> -->
         <div class="box-container0">
-
-          <!-- <div class="mySlides0 fade"> -->
+          {% for b in on %}
           <div class="box0">
-            <img src="../static/images/2.jpg" alt="" />
+            <img src="/{{ BASIC_DIR }}/{{img.img}}" alt="Not Found" />
             <div class="title0">
-              Speaker event
+              {{ b.name }}
             </div>
           </div>
-        <!-- </div> -->
+          {% endfor  %}
+        </div>
+          <a href="ongoing/" class="btn0">Add a Event</a>
 
-        <!-- <div class="mySlides0 fade"> -->
-          <div class="box0">
-            <img src="../static/images/3.jpg" alt="" />
-            <div class="title0">
-              Concert
-            </div>
-          </div>
-        <!-- </div> -->
-
-        <!-- <div class="mySlides0 fade"> -->
-          <div class="box0">
-            <img src="../static/images/4.jpg" alt="" />
-            <div class="title0">
-              Ted Talk
-            </div>
-          </div>
-          </div>
-          <a href="#" class="btn0">See All</a>
-          <!-- </div> -->
-          <!-- <br>
-                  
-          <a class="prev" onclick="plusSlides(-1)">❮</a>
-          <a class="next" onclick="plusSlides(1)">❯</a> -->
-        <!-- </div> -->
       </section>
       <section class="price" id="price">
         <h1 class="heading">Our <span>Prices</span></h1>
@@ -301,130 +287,63 @@
 
       <section class="reivew" id="review">
         <h1 class="heading">Client's <span>Reviews</span></h1>
-        <!-- <input class="inputBox0" type="text" placeholder="Leave a Review" /> -->
-        <textarea class="textArea"
-        name=""
-        placeholder="Leave a review"
-        id=""
-        cols="30"
-        rows="10"
-      ></textarea>
             <div class="review-slider">
-          <!-- <btn class="btn0">Submit</btn> -->
-          <!-- <input class="btn" type="submit" value="Submit" class="btn" /> -->
-          <a href="#" class="btn0">Submit</a>
-
 
           <div class="swiper-wrapper swiper-container">
               <div class="slideshow-container">
+
+                {% for a in da %}
                   <div class="mySlides0 fade">
                   <div class="swiper-slide box">
                       <i class="fa fa-comment"></i>
                       <div class="user">
                         <img src="../static/images/1.jpg" alt="" />
                         <div class="user-info">
-                          <h3>Joey Rain</h3>
+                          <h3>{{ a.user }}</h3>
                           <span>Good</span>
                         </div>
                       </div>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-                        dolor dicta. Eos beatae eligendi, magni numquam nemo sed ut
-                        corrupti, ipsam iure nisi unde et assumenda perspiciatis
-                        voluptatibus nihil.
+                        {{ a.description }}
                       </p>
                     </div>
                   </div>
+                      {% endfor %}
 
-                  <div class="mySlides0 fade">
-                    <div class="swiper-slide box">
-                      <i class="fa fa-comment"></i>
-                      <div class="user">
-                        <img src="../static/images/2.jpg" alt="" />
-                        <div class="user-info">
-                          <h3>Ram Khan</h3>
-                          <span>Happy</span>
-                        </div>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-                        dolor dicta. Eos beatae eligendi, magni numquam nemo sed ut
-                        corrupti, ipsam iure nisi unde et assumenda perspiciatis
-                        voluptatibus nihil.
-                      </p>
-                    </div>
-                  </div>
 
-                  <div class="mySlides0 fade">
-                  <div class="swiper-slide box">
-                      <i class="fa fa-comment"></i>
-                      <div class="user">
-                        <img src="../static/images/3.jpg" alt="" />
-                        <div class="user-info">
-                          <h3>Pan Bing</h3>
-                          <span>Average</span>
-                        </div>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-                        dolor dicta. Eos beatae eligendi, magni numquam nemo sed ut
-                        corrupti, ipsam iure nisi unde et assumenda perspiciatis
-                        voluptatibus nihil.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mySlides0 fade">
-                      <div class="swiper-slide box">
-                          <i class="fa fa-comment"></i>
-                          <div class="user">
-                            <img src="../static/images/3.jpg" alt="" />
-                            <div class="user-info">
-                              <h3>Pan Bing0</h3>
-                              <span>Average</span>
-                            </div>
-                          </div>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-                            dolor dicta. Eos beatae eligendi, magni numquam nemo sed ut
-                            corrupti, ipsam iure nisi unde et assumenda perspiciatis
-                            voluptatibus nihil.
-                          </p>
-                        </div>
-                      </div>
-                  
                   
                   <br>
-                  
+
                   <a class="prev" onclick="plusSlides(-1)">❮</a>
                   <a class="next" onclick="plusSlides(1)">❯</a>
+
                 </div>
+
                   </div>
+                  
                   <br>
-          </div>
+          </div>                  
+          <a class="btn0" href="review/">Add a Review</a>
+
         </div>
       </section>
 
       <section class="contact" id="contact">
         <h1 class="heading"><span>Contact</span> Us</h1>
 
-        <form action="">
+        <form action="" method="POST">
+          {% csrf_token %}
           <div class="inputBox">
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+            <input name="name" type="text" placeholder="Name" />
+            <input name="email" type="email" placeholder="Email" />
           </div>
           <div class="inputBox">
-            <input type="number" placeholder="Number" />
-            <input type="text" placeholder="Subject" />
+            <input name="number" type="number" placeholder="Number" />
+            <input name="subject" type="text" placeholder="Subject" />
           </div>
-          <textarea
-            name=""
-            placeholder="Your Message"
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input type="submit" value="Send Message" class="btn" />
+          <textarea name="message" placeholder="Your Message"
+            id="textAreaReview" cols="30" rows="10"></textarea>
+          <input type="submit"  value="Send Message" class="btn" />
         </form>
       </section>
 {% endblock %}

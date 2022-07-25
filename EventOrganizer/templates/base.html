@@ -12,7 +12,7 @@
   </head>
   <body>
     <header class="header">
-      <a href="#" class="logo"><span>The Event Organizer</span></a>
+      <a href="http://127.0.0.1:8000/" class="logo"><span>The Event Organizer</span></a>
 
       <nav class="navbar">
         <a href="#home">Home</a>
@@ -23,7 +23,15 @@
         <a href="#price">Price</a>
         <a href="#review">Review</a>
         <a href="#contact">Contact</a>
+        {% if user.is_authenticated %}
+        <!-- <h3>Hello {{ user }}</h3> -->
+        <a href="http://127.0.0.1:8000/login/" style.display='block' >signout</a>
+        {% else %}
+        <a href="http://127.0.0.1:8000/login/" style.display='block' >login</a>
+        {% endif %}
       </nav>
+
+
 
       <div id="menu-bars" class="fas fa-bars"></div>
     </header>
@@ -45,7 +53,7 @@
       <div class="box">
         <h3>Quick Links</h3>
         <a href="#"> <i class="fas fa-arrow-right"></i> Home </a>
-        <a href="#"> <i class="fas fa-arrow-right"></i> Service </a>
+        <a href="#service"> <i class="fas fa-arrow-right"></i> Service </a>
         <a href="#"> <i class="fas fa-arrow-right"></i> About </a>
         <a href="#"> <i class="fas fa-arrow-right"></i> Gallery </a>
         <a href="#"> <i class="fas fa-arrow-right"></i> OnGoing </a>

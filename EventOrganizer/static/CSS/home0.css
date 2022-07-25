@@ -1,4 +1,4 @@
-:root{
+    :root{
     --theColor:#5b3c0b;
 }
 
@@ -116,6 +116,7 @@ section{
     padding:32px 9%;
 }
 
+
 .heading{
     text-align: center;
     padding-bottom: 32px;
@@ -138,7 +139,6 @@ section{
     cursor: pointer;
     font-weight: 500;
 }
-
 .btn0{
     margin-left:45%;
     margin-top: 16px;
@@ -435,6 +435,10 @@ section{
     padding-right: 8px;
 }
 
+.review{
+    padding:50px;
+    margin:50px;
+}
 .reivew .box{
     border-radius: 8px;
     background: #333;
@@ -589,6 +593,26 @@ section{
     color:var(--theColor);
 }
 
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+.closebtn:hover {
+    color: black;
+  }
 
 @media (max-width:991px){
 

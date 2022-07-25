@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="../static/CSS/login.css" />
+
+  <body>
+    <style>
+      .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+      }
+      
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      
+      .closebtn:hover {
+        color: black;
+      }
+      </style>
+    <form class="modal-content" method="POST">
+      {% for message in messages %}
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';" role="alert">&times;</span> 
+        <strong>Message:</strong> {{ message }}
+      </div>
+      {% endfor %}
+        {% csrf_token %}
+      <div class="container">
+        <h1 style="text-align: center">Sign Up</h1>
+        <p style="text-align: center">
+          Fill in this form to create an account.
+        </p>
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="pswRepeat"
+          required
+        />
+
+        <p>
+          By creating an account you agree to our
+          <a href="#" style="color: dodgerblue">Terms & Conditions</a>.
+        </p>
+
+          <button type="submit">Sign Up</button>
+      </div>
+
+      <div class="container" style="background-color: #f1f1f1">
+        <div class="clearfix">
+          <button
+            type="button"
+            onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button>
+          <a href="http://127.0.0.1:8000/login/"
+          >
+          <button type="button" class="signupbtn" style="height: 41px">
+            Log In
+          </button>        </a>
+
+        </div>
+      </div>
+    </form>
+    <script src="../static/JS/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href='../static/CSS/login.css' />
+</head>
+<body>
+
+  
+  <form class="modal-content animate" action="" method="POST">
+    {% csrf_token %}
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert disimissable fade show" role="alert"></div>
+    {{ message }}
+    {% endfor %}
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h1 for="uname"><b>Login</b></h1>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+
+      <button type="submit">Login</button>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></a>
+            <a href="http://127.0.0.1:8000/signup/">
+                <button type="button" class="signupbtn" style="height:41px;">Sign Up</button>
+            </a>
+          </div>    
+        </div>  
+  </form>
+
+<script src="../static/JS/script.js"></script>
+</body>
+</html>

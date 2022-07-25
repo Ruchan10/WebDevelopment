@@ -13,7 +13,19 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
 }
-
+.btn1{
+    margin-left:45%;
+    margin-top: 16px;
+    margin-bottom:90px;
+    display: inline-block;
+    padding:13px 48px;
+    font-size: 27px;
+    border-radius: 8px;
+    background: #555;
+    color:#fff;
+    cursor: pointer;
+    font-weight: 500;
+}
 /* Caption text */
 .text {
   color: var(--theColor);

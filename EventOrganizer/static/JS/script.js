@@ -4,6 +4,11 @@ let slideIndex = 0;
 showSlides();
 showSlides0(slideIndex);
 
+function getText(){
+  let text=document.getElementById("desc");
+  console.log(text);
+  
+}
 
 function showSlides() {
   let i;
@@ -21,8 +26,6 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 4000); 
 }
-
-
 
 
 function plusSlides(n) {
@@ -48,3 +51,6 @@ function showSlides0(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+
+

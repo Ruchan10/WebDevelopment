@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class=r>
+    <input class="bt" type="submit" value="Submit"></input>
+  
+  </section>
+  {% for img in images %}  
+  
+    {{ img.name }}
+    <br>
+    <img src="" width="120"/>
+  
+  {% endfor %} 
+<section class="contact" id="contact">
+    <h1 for="desc" class="heading" >Add a <span>Event</span></h1>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+    <div class="inputBox">
+        <input name="name" type="text" placeholder="Name of Event" />
+    </div>
+        <h6 class="heading" style="font-size:large;padding-top:59px;" for="img">Select image:</h6>
+        <input  type="file" id="img" style="font-size:medium;padding-bottom:59px;" name="image" accept="image/*">
+
+      <textarea name="desc" placeholder="About Event"
+        id="textAreaReview" cols="30" rows="10"></textarea>
+      <input type="submit"  value="ADD" class="btn" />
+    </form>
+  </section>
+
+{% endblock content %}
