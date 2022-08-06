@@ -8,8 +8,123 @@
   padding-bottom: 32px;
   color:#fff;
   font-size: 64px;}
-</style>
 
+  .title1{
+    position: absolute;
+    background:#333;
+    color:#fff;
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 32px;
+    /* z-index:9999999;
+    display:none; */
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left:45%;
+  margin-top: 16px;
+  margin-bottom:90px;
+  display: inline-block;
+  padding:13px 48px;
+  font-size: 27px;
+  border-radius: 8px;
+  background: #555;
+  color:#fff;
+  cursor: pointer;
+  font-weight: 500; 
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: red;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+.popup .popuptext2 {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: green;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+<script>
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+function myFunction0() {
+  var popup = document.getElementById("myPopup0");
+  popup.classList.toggle("show");
+}
+function myFunction1() {
+  var popup = document.getElementById("myPopup1");
+  popup.classList.toggle("show");
+}
+function myFunction2() {
+  var popup = document.getElementById("myPopup2");
+  popup.classList.toggle("show");
+}
+function myFunction3() {
+  var popup = document.getElementById("myPopup3");
+  popup.classList.toggle("show");
+}
+function myFunction4() {
+  var popup = document.getElementById("myPopup4");
+  popup.classList.toggle("show");
+}
+</script>
   <section class="home" id="home">
         <div class="content">
           <h3>THE <span>BEST EVENT ORGANIZER</span>! IS IN THE TOWN.</h3>
@@ -17,18 +132,18 @@
         </div>
         <div class="slideshow-container">
           <div class="mySlides fade">
-            <img src="../static/images/1.jpg" style="width: 100%" />
-            <div class="text">Caption Text</div>
+            <img src="../static/images/topPic.jpg" style="width: 100%" />
+            <div class="text">Speaker Event</div>
           </div>
 
           <div class="mySlides fade">
-            <img src="../static/images/2.jpg" style="width: 100%" />
-            <div class="text">Caption Two</div>
+            <img src="../static/images/topPic2.png" style="width: 100%" />
+            <div class="text">Wedding</div>
           </div>
 
           <div class="mySlides fade">
-            <img src="../static/images/3.jpg" style="width: 100%" />
-            <div class="text">Caption Three</div>
+            <img src="../static/images/topPic3.png" style="width: 100%" />
+            <div class="text">Concert</div>
           </div>
         </div>
 
@@ -46,7 +161,6 @@
 
       <section class="service" id="service">
         <h1 class="heading">Our <span>Services</span></h1>
-
         <div class="box-container">
           <div class="box">
             <i class="fas fa-map-marker-alt"></i>
@@ -91,7 +205,7 @@
 
         <div class="row">
           <div class="image">
-            <img src="../static/images/1.jpg" alt="" />
+            <img src="../static/images/aboutUs.jpg" alt="" />
           </div>
 
           <div class="content">
@@ -102,7 +216,7 @@
               innovation. They allow a community to come alive and provide an opportunity for a
               destination to showcase its tourism experience and increase economic activity.
             </p>
-            <a href="#" class="btn">Contact Us</a>
+            <a href="#contact" class="btn">Contact Us</a>
           </div>
         </div>
       </section>
@@ -112,7 +226,7 @@
 
         <div class="box-container">
           <div class="box">
-            <img src="../static/images/2.jpg" alt="" />
+            <img src="../static/images/gallery.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -120,7 +234,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/3.jpg" alt="" />
+            <img src="../static/images/gallery0.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -128,7 +242,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/4.jpg" alt="" />
+            <img src="../static/images/gallery1.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -136,7 +250,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/5.jpg" alt="" />
+            <img src="../static/images/gallery2.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -144,7 +258,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/6.jpg" alt="" />
+            <img src="../static/images/gallery3.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -152,7 +266,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/7.jpg" alt="" />
+            <img src="../static/images/gallery4.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -160,7 +274,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/8.jpg" alt="" />
+            <img src="../static/images/gallery5.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -168,7 +282,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/9.jpg" alt="" />
+            <img src="../static/images/gallery6.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -176,7 +290,7 @@
           </div>
 
           <div class="box">
-            <img src="../static/images/10.jpg" alt="" />
+            <img src="../static/images/gallery7.jpeg" alt="" />
             <div class="icons">
               <a href="#" class="fas fa-heart"></a>
               <a href="#" class="fas fa-eye"></a>
@@ -187,15 +301,21 @@
 
       <section class="ongoing" id="ongoing">
         <h1 class="heading"><span>OnGoing</span> Events</h1>
-        <!-- <div class="slideshow-container"> -->
         <div class="box-container0">
           {% for b in on %}
           <div class="box0">
-            <img src="/{{ BASIC_DIR }}/{{img.img}}" alt="Not Found" />
+            <img src="{{ b.img }}" alt="" />
             <div class="title0">
               {{ b.name }}
+              <br>
+              {{ b.address }}
+              <br>
+              {{ b.time }}
+              <br>
+              {{ b.descr }}
             </div>
           </div>
+
           {% endfor  %}
         </div>
           <a href="ongoing/" class="btn0">Add a Event</a>
@@ -207,7 +327,7 @@
         <div class="box-container">
           <div class="box">
             <h3 class="title">For Speaker Event</h3>
-            <h3 class="amount">NRs 9,999</h3>
+            <h3 class="amount">NRs 9,999</h3> 
             <ul>
               <li><i class="fas fa-check"></i></i>Full Services</li>
               <li><i class="fas fa-check"></i> Decorations</li>
@@ -215,7 +335,15 @@
               <li><i class="fas fa-check"></i> Food and Drinks</li>
               <li><i class="fas fa-check"></i> Invitation Card</li>
             </ul>
-            <a href="#" class="btn">Book</a>
+            {% if user.is_authenticated %}
+            <div class="popup" onclick="myFunction()">Book
+              <span class="popuptext2" id="myPopup">Added to your library</span>
+            </div>
+            {% else %}
+            <div class="popup" onclick="myFunction()">Book
+              <span class="popuptext" id="myPopup">Please Login to continue!!!</span>
+            </div>
+            {% endif %}
           </div>
 
           <div class="box">
@@ -228,7 +356,16 @@
               <li><i class="fas fa-check"></i> Food and Drinks</li>
               <li><i class="fas fa-check"></i> Invitation Card</li>
             </ul>
-            <a href="#" class="btn">Book</a>
+            {% if user.is_authenticated %}
+            <!-- <h3>Hello {{ user }}</h3> -->
+            <div class="popup" onclick="myFunction0()">Book
+              <span class="popuptext2" id="myPopup0">Added to your library</span>
+            </div>
+            {% else %}
+            <div class="popup" onclick="myFunction0()">Book
+              <span class="popuptext" id="myPopup0">Please Login to continue!!!</span>
+            </div>
+            {% endif %}
           </div>
 
           <div class="box">
@@ -241,7 +378,16 @@
               <li><i class="fas fa-check"></i> Food and Drinks</li>
               <li><i class="fas fa-check"></i> Invitation Card</li>
             </ul>
-            <a href="#" class="btn">Book</a>
+            {% if user.is_authenticated %}
+            <!-- <h3>Hello {{ user }}</h3> -->
+            <div class="popup" onclick="myFunction1()">Book
+              <span class="popuptext2" id="myPopup1">Added to your library</span>
+            </div>
+            {% else %}
+            <div class="popup" onclick="myFunction1()">Book
+              <span class="popuptext" id="myPopup1">Please Login to continue!!!</span>
+            </div>
+            {% endif %}
           </div>
 
           <div class="box">
@@ -254,8 +400,17 @@
               <li><i class="fas fa-check"></i> Food and Drinks</li>
               <li><i class="fas fa-check"></i> Invitation Card</li>
             </ul>
-            <a href="#" class="btn">Book</a>
-          </div>
+            {% if user.is_authenticated %}
+            <!-- <h3>Hello {{ user }}</h3> -->
+            <div class="popup" onclick="myFunction2()">Book
+              <span class="popuptext2" id="myPopup2">Added to your library</span>
+            </div>
+            {% else %}
+            <div class="popup" onclick="myFunction2()">Book
+              <span class="popuptext" id="myPopup2">Please Login to continue!!!</span>
+            </div>
+            {% endif %}
+            </div>
 
           <div class="box">
             <h3 class="title">For Concerts</h3>
@@ -267,7 +422,16 @@
               <li><i class="fas fa-check"></i> Food and Drinks</li>
               <li><i class="fas fa-check"></i> Invitation Card</li>
             </ul>
-            <a href="#" class="btn">Book</a>
+            {% if user.is_authenticated %}
+            <!-- <h3>Hello {{ user }}</h3> -->
+            <div class="popup" onclick="myFunction3()">Book
+              <span class="popuptext2" id="myPopup3">Added to your library</span>
+            </div>
+            {% else %}
+            <div class="popup" onclick="myFunction3()">Book
+              <span class="popuptext" id="myPopup3">Please Login to continue!!!</span>
+            </div>
+            {% endif %}
           </div>
 
           <div class="box">
@@ -280,7 +444,16 @@
               <li><i class="fas fa-check"></i> Food and Drinks</li>
               <li><i class="fas fa-check"></i> Invitation Card</li>
             </ul>
-            <a href="#" class="btn">Book</a>
+            {% if user.is_authenticated %}
+            <!-- <h3>Hello {{ user }}</h3> -->
+            <div class="popup" onclick="myFunction4()">Book
+              <span class="popuptext2" id="myPopup4">Added to your library</span>
+            </div>
+            {% else %}
+            <div class="popup" onclick="myFunction4()">Book
+              <span class="popuptext" id="myPopup4">Please Login to continue!!!</span>
+            </div>
+            {% endif %}
           </div>
         </div>
       </section>
@@ -290,14 +463,12 @@
             <div class="review-slider">
 
           <div class="swiper-wrapper swiper-container">
-              <div class="slideshow-container">
-
+              <div class="slideshow-container" style="width:400px">
                 {% for a in da %}
                   <div class="mySlides0 fade">
                   <div class="swiper-slide box">
                       <i class="fa fa-comment"></i>
-                      <div class="user">
-                        <img src="../static/images/1.jpg" alt="" />
+                      <div class="user">  
                         <div class="user-info">
                           <h3>{{ a.user }}</h3>
                           <span>Good</span>
@@ -308,10 +479,7 @@
                       </p>
                     </div>
                   </div>
-                      {% endfor %}
-
-
-                  
+                      {% endfor %}                  
                   <br>
 
                   <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -322,8 +490,15 @@
                   </div>
                   
                   <br>
-          </div>                  
+          </div>
+          {% if user.is_authenticated %}
+          <!-- <h3>Hello {{ user }}</h3> -->
           <a class="btn0" href="review/">Add a Review</a>
+          {% else %}
+          <div class="popup" onclick="myFunction()">Add a Review
+            <span class="popuptext" id="myPopup">Please Login to continue!!!</span>
+          </div>
+          {% endif %}
 
         </div>
       </section>
@@ -343,7 +518,14 @@
           </div>
           <textarea name="message" placeholder="Your Message"
             id="textAreaReview" cols="30" rows="10"></textarea>
-          <input type="submit"  value="Send Message" class="btn" />
+          {% if user.is_authenticated %}
+          <!-- <h3>Hello {{ user }}</h3> -->
+          <input type="submit"  value="Send Message as {{ user }}" class="btn" />
+          {% else %}
+          <div class="popup" onclick="myFunction()">Send Message
+            <span class="popuptext" id="myPopup">Please Login to continue!!!</span>
+          </div>
+          {% endif %}
         </form>
       </section>
 {% endblock %}

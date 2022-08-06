@@ -5,8 +5,10 @@ import datetime, os
 
 class on(models.Model):
     name=models.TextField(max_length=30)
-    img=models.ImageField(upload_to="media")
-    desc=models.TextField(max_length=500)
+    img=models.FileField(upload_to="static/images",default="default.jpg")
+    address=models.TextField(max_length=50)
+    time=models.TextField(max_length=40)
+    descr=models.TextField(max_length=500)
     class Meta:
         db_table='EventOrganizer_ongoing'
 
@@ -18,6 +20,7 @@ class rev(models.Model):
         db_table='EventOrganizer_re'
 
 class contact(models.Model):
+    id=models.TextField(max_length=30, primary_key=True)
     name=models.TextField(max_length=30)
     email=models.TextField(max_length=80)
     number=models.TextField(max_length=20)

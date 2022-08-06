@@ -75,13 +75,13 @@ def home(request):
     if request.method=='POST':
         if request.POST.get('name'):
             table=contact()
+            table.id=1
             table.name=request.POST.get('name')
             table.email=request.POST.get('email')
             table.number=request.POST.get('number')
             table.subject=request.POST.get('subject')
             table.message=request.POST.get('message')
             table.save()
-            # messages.success(request,'Saved')
         return redirect('homePage')
     return render(request,'home.html',dat)
 
@@ -89,21 +89,23 @@ def revie(request):
     if request.method=='POST':
         if request.POST.get('textArea'):
             table=rev()
+            table.user="rk10"
             table.description=request.POST.get('textArea')
             table.rating=request.POST.get('rate')
             table.save()
-            # messages.success(request,'Saved')
         return redirect('homePage')
     return render (request, 'review.html')
 
 def ongoing(request):
+    print(request.FILES)
     if request.method=='POST':
         if request.POST.get('name'):
             table=on()
             table.name=request.POST.get('name')
-            if 'image' in request.FILES:
-                table.img=request.FILES['image']
-            table.desc=request.POST.get('desc')
+            table.img=request.FILES['image']
+            table.address=request.POST.get('Address')
+            table.time=request.POST.get('Time')
+            table.descr=request.POST.get('desc')
             table.save()
         return redirect('homePage')
     return render(request, 'ongoing.html')

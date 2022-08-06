@@ -21,8 +21,15 @@
   </select>
     <textarea id="desc" type="text" class="textArea" name="textArea" placeholder="Leave a review" 
     cols="30" rows="10"  ></textarea>
+    <div id="user" name="User" style="display:none" >{{ user }}</div>
 
-    <input class="btn0" type="submit" value="Submit"></input>
+    {% if user.is_authenticated %}
+    <input class="btn0" type="submit" value="Submit as {{ user }}"></input>
+    {% else %}
+    <div class="popup" onclick="myFunction()">ADD
+      <span class="popuptext" id="myPopup">Please Login to continue!!!</span>
+    </div>
+    {% endif %}
   </form>
 
   

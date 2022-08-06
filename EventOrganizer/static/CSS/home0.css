@@ -5,7 +5,10 @@
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
-.mySlides0 {display:none;}
+.mySlides0 {
+    display:none;
+    width:100px;
+}
 img {vertical-align: middle;}
 
 
@@ -72,6 +75,7 @@ img {vertical-align: middle;}
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  visibility: hidden;
 }
 
 .dot {
@@ -322,7 +326,7 @@ section{
 }
 .title0{
     position: absolute;
-    bottom:-100px; left:0; right: 0;
+    bottom:-250px; left:0; right: 0;
     background:#333;
     color:#fff;
     text-align: center;
@@ -332,10 +336,11 @@ section{
 
 .box0:hover .title0{
     bottom:-1px;
+    
 }
 .title0:hover{
     color:var(--theColor);
-
+    height:100%;
 }
 
 /* ----- */
@@ -440,6 +445,7 @@ section{
     margin:50px;
 }
 .reivew .box{
+    height:100px;
     border-radius: 8px;
     background: #333;
     padding:32px;

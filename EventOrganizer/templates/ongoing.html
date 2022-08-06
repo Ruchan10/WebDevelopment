@@ -4,29 +4,38 @@
 
 <section class=r>
     <input class="bt" type="submit" value="Submit"></input>
-  
   </section>
   {% for img in images %}  
-  
     {{ img.name }}
     <br>
     <img src="" width="120"/>
-  
   {% endfor %} 
 <section class="contact" id="contact">
     <h1 for="desc" class="heading" >Add a <span>Event</span></h1>
-
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
     <div class="inputBox">
         <input name="name" type="text" placeholder="Name of Event" />
     </div>
-        <h6 class="heading" style="font-size:large;padding-top:59px;" for="img">Select image:</h6>
-        <input  type="file" id="img" style="font-size:medium;padding-bottom:59px;" name="image" accept="image/*">
-
+    <div class="" style="display:flex">
+        <h6 class="heading" style="text-align:left;font-size:large;padding-top:59px;" for="img">Select image:</h6>
+        <input type="file" id="img" name="image" style="font-size:medium;padding-bottom:59px;padding-top:58px;"></div>
+        <div class="inputBox">
+          <input name="Address" type="text" placeholder="Enter address of event" />
+      </div>
+      <div class="inputBox">
+        <input name="Time" type="text" placeholder="Event time and date" />
+    </div>
       <textarea name="desc" placeholder="About Event"
         id="textAreaReview" cols="30" rows="10"></textarea>
-      <input type="submit"  value="ADD" class="btn" />
+      {% if user.is_authenticated %}
+      <!-- <h3>Hello {{ user }}</h3> -->
+      <input type="submit"  value="ADD as {{ user }}" class="btn" />
+      {% else %}
+      <div class="popup" onclick="myFunction()">ADD
+        <span class="popuptext" id="myPopup">Please Login to continue!!!</span>
+      </div>
+      {% endif %}
     </form>
   </section>
 
